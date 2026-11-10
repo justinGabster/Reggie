@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dev-dist/
+.wrangler/
+
+# secrets (never commit)
+.dev.vars
+.env
+.env.*
+!.env.example
+!.dev.vars.example
+client_secret_695576002035-scufog0a9rplr0r9jfj4pkf86k22f9qj.apps.googleusercontent.com.json
+
+# test output
+test-results/
+playwright-report/
+coverage/
+
+# misc
+.DS_Store
+Thumbs.db
+*.log

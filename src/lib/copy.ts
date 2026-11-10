@@ -1,0 +1,288 @@
+/**
+ * Every user-facing Taglish string in one place (Implementation Plan §7.3), so the team can tune
+ * Reggie's voice without touching components. Templates use {name}-style placeholders; see fill().
+ */
+
+export const copy = {
+  app: {
+    name: "Reggie",
+    offline: "Offline ka yata, subukan ulit pag may signal.",
+    backOnline: "Online ka na ulit!",
+    updateAvailable: "May bagong version si Reggie",
+    reload: "Reload",
+    later: "Mamaya na",
+    back: "Back",
+    home: "Home",
+    retry: "Subukan ulit",
+    loading: "Sandali lang...",
+    loadingLines: ["Sandali lang...", "Hinahanap ko na po...", "Inaayos ko lang ang tickets...", "Konti na lang!"],
+    close: "Close",
+  },
+
+  settings: {
+    title: "Settings",
+    open: "Open settings",
+    bubble: "Ikaw bahala!",
+    sounds: "Sounds",
+    soundsHint: "Konting boing at tunog pag success.",
+    music: "Music",
+    musicHint: "Background music habang nagre-register.",
+    volume: "Music volume",
+    reduceMotion: "Reduce motion",
+    reduceMotionHint: "Mas kalmado si Reggie, walang talon-talon.",
+    darkMode: "Dark mode",
+    darkModeHint: "Para sa gabi o sa court na madilim.",
+    done: "Done",
+  },
+
+  reggie: {
+    ballLabel: "Bounce the ball off Reggie",
+    tapHint: "tap me!",
+  },
+
+  home: {
+    /** {name} is drawn highlighted. */
+    bubble: "Hi, I'm {name}! Your registration buddy! Tell me who you are, pick a seminar, and I'll fetch your QR ticket.",
+    headline1: "Register in a minute.",
+    headline2: "Skip the line.",
+    sub: "Four quick details, one QR ticket in your inbox. Show it at the door and you're in.",
+    choose: "Choose your role",
+    eventsOpen: "{n} events open",
+    oneEventOpen: "1 event open",
+    noEventsOpen: "No events yet",
+    registrantEyebrow: "For attendees",
+    registrantTitle: "Register for a seminar",
+    registrationOpen: "Bukas ang registration",
+    steps: ["Pili ng event", "4 details", "QR sa inbox"],
+    registrant: "I'm a Registrant",
+    features: [
+      { lead: "4 quick details", rest: " lang, wala nang pila" },
+      { lead: "QR ticket", rest: " diretso sa inbox mo" },
+    ],
+    organizerLead: "Organizer ka?",
+    organizerRest: "Gumawa ng event, i-scan ang tickets sa pinto.",
+    organizer: "I'm an Organizer",
+  },
+
+  events: {
+    title: "Events",
+    bubble: "Pili ka na ng event!",
+    empty: "Wala pang events...",
+    emptySub: "Balik ka mamaya, baka meron na.",
+    full: "Puno na",
+    spotsLeft: "{n} spots left",
+    oneSpotLeft: "1 spot na lang!",
+    register: "Register",
+    loadError: "Hindi ko makuha ang events ngayon.",
+  },
+
+  register: {
+    title: "Register",
+    labels: {
+      fullName: "Full Name",
+      email: "Email Address",
+      organization: "Organization",
+      contactNumber: "Contact Number",
+    },
+    placeholders: {
+      fullName: "Juan Dela Cruz",
+      email: "juan@example.com",
+      organization: "PUP, company, or org",
+      contactNumber: "09XX XXX XXXX",
+    },
+    hints: {
+      contactNumber: "PH mobile number lang, 09 o +63.",
+    },
+    bubble: {
+      idle: "Fill up mo lang 'to, ako na bahala sa ticket mo!",
+      typing: "Sige, nakikinig ako.",
+      error: "Oops, may kulang pa.",
+      loading: "Kukunin ko na ang ticket mo...",
+      duplicate: "Naka-register ka na yata!",
+      duplicateHint: "Check mo ang email mo, nandoon ang ticket mo.",
+      full: "Puno na, pasensya na!",
+      fullHint: "Wala nang bakanteng upuan sa event na 'to.",
+    },
+    submit: "Register",
+    submitting: "Sending...",
+    notFound: "Hindi ko mahanap ang event na 'yan.",
+    notFoundSub: "Baka na-unpublish na o mali ang link.",
+    backToEvents: "Back to events",
+  },
+
+  ticket: {
+    title: "Your Ticket",
+    successBubble: "Rehistrado ka na!",
+    idleBubble: "Ito ang ticket mo, {name}!",
+    emailNote: "Check your email, nandoon din ang ticket mo.",
+    showAtDoor: "Ipakita mo lang 'tong QR sa entrance.",
+    save: "Save as image",
+    saving: "Saving...",
+    back: "Back to events",
+    checkedIn: "Checked in",
+    checkedInNote: "Naka-check in ka na. Enjoy!",
+    notFound: "Hindi ko mahanap 'tong ticket na 'to.",
+    notFoundSub: "Check mo ulit ang link sa email mo.",
+    attendee: "Attendee",
+    when: "When",
+    where: "Where",
+  },
+
+  notFound: {
+    title: "Huh? Saan 'yon?",
+    body: "Wala dito ang page na hinahanap mo.",
+    home: "Back to home",
+    crash: "Ay, may nasira. Pasensya na!",
+    crashSub: "I-reload natin para maayos.",
+  },
+
+  admin: {
+    deleteEvent: {
+      button: "Delete event",
+      title: "Delete this event?",
+      bodyNone: "Buburahin na ang event na 'to. Hindi na ito mababalik.",
+      bodySome: "Buburahin ang event at ang {n} registration(s) nito, pati ang mga QR ticket. Hindi na ito mababalik.",
+      confirm: "DELETE",
+      cancel: "CANCEL",
+      done: "Nabura na ang event.",
+    },
+    title: "Organizer",
+    signInBubble: "Hello, organizer! Mag-sign in ka muna.",
+    signIn: "Sign in with Google",
+    signingIn: "Signing in...",
+    signOut: "Sign out",
+    notConfigured: "Hindi pa naka-setup ang sign-in.",
+    notConfiguredSub: "Ilagay ang VITE_SUPABASE_URL at VITE_SUPABASE_ANON_KEY sa .env, tapos i-restart ang dev server.",
+    welcome: "Hello, organizer! Ready na ba ang event?",
+    myEvents: "My Events",
+    addEvent: "Add event",
+    noEvents: "Wala ka pang events.",
+    noEventsSub: "Gawa tayo ng una mong event!",
+    loadError: "Hindi ko makuha ang events mo.",
+    newEvent: "New Event",
+    newEventBubble: "Anong event natin ngayon?",
+    labels: {
+      title: "Event Title",
+      description: "Description",
+      dateTime: "Date and Time",
+      venue: "Venue",
+      capacity: "Capacity",
+    },
+    saveDraft: "Save as draft",
+    saving: "Saving...",
+    saved: "Na-save na! Draft muna 'to.",
+    draft: "Draft",
+    published: "Published",
+    publish: "Publish",
+    unpublish: "Unpublish",
+    publishedNote: "Live na! Makikita na ng lahat.",
+    unpublishedNote: "Hidden na ulit ang event.",
+    stats: {
+      registered: "Registered",
+      checkedIn: "Checked in",
+      emailFailed: "Email failed",
+      capacity: "Capacity",
+    },
+    registrants: "Registrants",
+    noRegistrants: "Wala pang nagre-register.",
+    search: "Search name, email, or org",
+    noMatches: "Walang tugma sa search mo.",
+    resend: "Resend",
+    resending: "Sending...",
+    resent: "Pinadala ko ulit ang ticket!",
+    downloadCsv: "Download CSV",
+    scanQr: "Scan QR",
+    emailStatus: { pending: "Sending", sent: "Sent", failed: "Failed" },
+    checkedInPill: "Checked in",
+    notCheckedIn: "Not yet",
+  },
+
+  scan: {
+    title: "Scan QR",
+    ready: "Tutok mo lang ang QR sa camera.",
+    checking: "Sandali, chine-check ko...",
+    checked_in: "Pasok! Welcome, {name}!",
+    already: "Naka-check in na siya.",
+    alreadyAt: "Naka-check in na siya kanina, {time}.",
+    wrong_event: "Hmm, ibang event 'to ah.",
+    wrongEventDetail: "Para sa \"{event}\" ang ticket ni {name}.",
+    invalid: "Hindi ko kilala 'tong QR na 'to.",
+    next: "Scan next",
+    cameraDenied: "Hindi ko makita ang camera.",
+    cameraSteps: "Payagan ang camera sa browser settings (tap the lock icon sa address bar), tapos i-reload.",
+    cameraUnsupported: "Walang camera na available dito. Gamitin ang manual entry sa baba.",
+    manualLabel: "Manual token entry",
+    manualHint: "Nasa ilalim ng QR sa email ang token.",
+    manualSubmit: "Check in",
+  },
+
+  /** Date + time picker (components/DateTimeField.tsx). */
+  picker: {
+    placeholder: "Pili ng petsa at oras",
+    bubbleEmpty: "Kailan ang event natin?",
+    bubblePicked: "{date}, {time}. Ayos!",
+    bubblePast: "Huh, tapos na ang araw na 'yan ah.",
+    today: "Ngayon",
+    prevMonth: "Previous month",
+    nextMonth: "Next month",
+    time: "Oras",
+    hour: "Hour",
+    minute: "Minute",
+    period: "AM or PM",
+    presets: [
+      { h: 8, label: "Umaga · 8 AM" },
+      { h: 13, label: "Hapon · 1 PM" },
+      { h: 18, label: "Gabi · 6 PM" },
+    ],
+    clear: "Clear",
+    done: "Ayos na",
+  },
+
+  errors: {
+    // ErrorCode (shared/api-types.ts)
+    validation_error: "May mali sa form, tingnan mo ulit.",
+    not_found: "Hindi ko mahanap 'yan.",
+    duplicate_registration: "Naka-register ka na yata!",
+    event_full: "Puno na, pasensya na!",
+    unauthorized: "Sign in ka muna ulit.",
+    forbidden: "Bawal 'yan dito, pasensya na.",
+    rate_limited: "Dahan-dahan lang! Subukan ulit maya-maya.",
+    captcha_required: "Sandali, chine-check ko pa kung tao ka. Subukan ulit.",
+    captcha_failed: "Hindi pumasa sa captcha check. Subukan ulit.",
+    internal: "Ay, may problema sa server. Subukan ulit.",
+    network: "Offline ka yata, subukan ulit pag may signal.",
+    // FIELD_CODES (shared/schemas.ts)
+    name_short: "Medyo maikli ang pangalan, buuin mo na.",
+    name_long: "Ang haba! Hanggang 100 characters lang.",
+    email_required: "Kailangan ko ang email mo.",
+    email_format: "Oops, kulang pa ang email.",
+    org_required: "Saang organization ka?",
+    org_long: "Ang haba! Hanggang 120 characters lang.",
+    contact_required: "Pakilagay ang contact number mo.",
+    contact_format: "Dapat 09XX XXX XXXX ang format.",
+    title_short: "Medyo maikli ang title, at least 3 characters.",
+    title_long: "Ang haba ng title! Hanggang 120 lang.",
+    description_long: "Hanggang 2000 characters lang ang description.",
+    date_invalid: "Pakipili ng tamang date at time.",
+    venue_short: "Saan gaganapin? Kulang pa ang venue.",
+    venue_long: "Ang haba ng venue! Hanggang 200 lang.",
+    capacity_invalid: "1 hanggang 10,000 lang ang capacity.",
+    token_invalid: "Hindi valid ang token na 'yan.",
+    invalid: "Parang may mali dito, check mo ulit.",
+  },
+
+  fallbackError: "Ay, may nangyaring kakaiba. Subukan ulit.",
+} as const;
+
+/** Taglish message for any API ErrorCode, "network", or a Zod field code. Unknown codes get a friendly fallback. */
+export function errorCopy(code: string): string {
+  const errors = copy.errors as Record<string, string>;
+  return Object.prototype.hasOwnProperty.call(errors, code) ? errors[code] : copy.fallbackError;
+}
+
+/** fill("Pasok! Welcome, {name}!", { name: "Ana" }) -> "Pasok! Welcome, Ana!" */
+export function fill(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (match, key: string) =>
+    Object.prototype.hasOwnProperty.call(vars, key) ? String(vars[key]) : match,
+  );
+}

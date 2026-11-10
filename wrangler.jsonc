@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "reggie",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "not_found_handling": "single-page-application", // SPA fallback to index.html
+    "run_worker_first": ["/api/*"]                   // the API is never served as a static asset
+  },
+  "vars": {
+    "APP_URL": "https://reggie.reggie-events.workers.dev",
+    "SUPABASE_URL": "https://xtkdjfghjfbqnrsoileo.supabase.co",
+    "EMAIL_FROM": "Reggie <onboarding@resend.dev>"   // change to tickets@mail.<your-domain> after Resend verification
+  },
+  "observability": { "enabled": true }
+  // routes / custom_domain are added in Phase 4
+}
